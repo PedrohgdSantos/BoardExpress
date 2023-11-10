@@ -236,3 +236,11 @@ transition: .5s;
         width: 0;
     }
 }
+
+
+/*CONTATO*/
+
+.cont-contato{
+    position: relative;
+    align-items: centerS;
+}

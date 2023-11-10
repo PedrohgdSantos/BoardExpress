@@ -1,0 +1,85 @@
+@import url(/styles/style.css);
+
+body .contato{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 300px;
+}
+
+form {
+    width: 500px; /* ou ajuste conforme necessário */
+    padding: 100px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    margin: 200px;
+    margin-right: 200px;
+    align-items: center;
+    position: absolute;
+}
+
+
+
+h1 {
+    text-align: center;
+    color: #ffff;
+    align-items: center;
+    padding: 10px;
+}
+
+p{
+    text-align: center;
+    color: #ffff;
+    font-size: large;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #196899;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background: none;
+    color: #ffff;
+    border: #ffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #33cdd9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #081b29;
+    animation-duration: 1s;
+    transition: 1s;
+}
+
+h2.aviso{
+    align-items: center;
+    border: 20px;
+    border-radius: 40px;
+    margin: 20px;
+    height: 30px;
+}
+
+h2.contato-alert{
+    text-align:      center;
+    margin: auto;
+    color: #ffff;
+    font-size: 40px;
+    text-decoration: underline;
+}

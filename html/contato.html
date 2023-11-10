@@ -5,21 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoardExpress</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/contato.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
+<body class="contato">
     <header class="header">
-        <a href="/index.html" class="logo">BoardExpress</a>
+        <a href="/html/index.html" class="logo">BoardExpress</a>
 
         <nav class="navbar">
             <a href="/html/index.html">Home</a>
             <a href="/html/sobre.html">Sobre nós</a>
             <a href="/html/projeto.html">Nosso Projeto</a>
             <a href="/html/contato.html" class="active">Contato</a>
-
-            <section class="contact" id="contact">
-                <h2 class="heading">Entre em <span>Contato!</span></h2>
-            </section>
         </nav>
     </header>
+
+    <h2 class="contato-alert">Entre em Contato</h2>
+    <form>
+        <div class="cont-contato" id="container">
+        <h1>Cadastro Institucional</h1>
+        <p>Para cadastrar sua instituição, forneça seu melhor e-mail e telefone institucionais.</p>
+
+        <div><label>Email</label></div>
+        <input type="email" id="email" placeholder="etec123@gmail.com"><br><br>
+        
+        <div><label>Telefone principal da Instituição</label></div>
+        <input type="tel" id="tel" placeholder="1234-5678"><br><br>
+
+
+        <button type="button" class="solid" id="criar">Criar</button>
+       
+    
+    </div>
+    </form>
+    <div class="home-imgHover"><img src="/image/desktop computer.gif" alt=""></div>
+
+    <script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+
+    const firebaseConfig = {
+    apiKey: "AIzaSyCPPUg-1dl9SYv_-CfvWZuHJa87THijyTs",
+    authDomain: "cadastro-boardexpress-67a66.firebaseapp.com",
+    projectId: "cadastro-boardexpress-67a66",
+    storageBucket: "cadastro-boardexpress-67a66.appspot.com",
+    messagingSenderId: "346399739201",
+    appId: "1:346399739201:web:a6937e76e9f10d520ba5c0",
+    measurementId: "G-DRJSBB4XBN"
+  };
+
+  const app = initializeApp(firebaseConfig);
+    
+  const auth = getAuth(app);
+
+  document.getElementById('criar').addEventListener('click', function(){
+         const email = document.getElementById('email').value
+         const tel = document.getElementById('tel').value
+
+         createUserWithEmailAndPassword(auth, email, tel).then((userCredential) => {
+             const user = userCredential.user;
+             alert("Instituição cadastrada com sucesso!")
+             window.location.href = "/html/aviso.html";
+        })
+         .catch((error) => {
+             const errorCode = error.code;
+             const errorMesage = error.message;
+             alert("Erro...")
+             alert("Essas credenciais já podem estar cadastradas na nossa plataforma.")
+        });
+        })
+     </script>
+    </script>
